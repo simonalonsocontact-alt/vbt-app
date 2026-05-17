@@ -8,8 +8,6 @@ st.set_page_config(page_title="Force & VBT Pro", page_icon="🏋️‍♂️", l
 # Initialisation des variables de session
 if 'historique_seance' not in st.session_state:
     st.session_state.historique_seance = []
-if 'theme_nuit' not in st.session_state:
-    st.session_state.theme_nuit = True
 
 # --- BASE DE DONNÉES DES 1RM DE RÉFÉRENCE ---
 if 'rm_squat' not in st.session_state: st.session_state.rm_squat = 175.0
