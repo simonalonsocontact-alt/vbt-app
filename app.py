@@ -25,53 +25,27 @@ with st.sidebar:
     st.session_state.rm_deadlift = st.number_input("Soulevé de Terre (kg)", min_value=1.0, value=st.session_state.rm_deadlift, step=2.5)
     st.session_state.rm_autre = st.number_input("Autre mouvement (kg)", min_value=1.0, value=st.session_state.rm_autre, step=2.5)
 
-# --- INJECTION CSS AVANCÉE POUR LES THÈMES (UI MULTI-PLATEFORME) ---
-if st.session_state.theme_nuit:
-    st.markdown("""
-        <style>
-        /* Fond global et textes */
-        .stApp { background-color: #0F1219; color: #F3F4F6; }
-        
-        /* Personnalisation des onglets (Tabs) */
-        button[data-baseweb="tab"] { color: #9CA3AF !important; font-weight: 600; }
-        button[aria-selected="true"] { color: #00F0FF !important; border-bottom-color: #00F0FF !important; }
-        
-        /* Boutons Primaires (Boutons d'action) */
-        div.stButton > button[kind="primary"] { 
-            background-color: #00F0FF !important; color: #0F1219 !important; 
-            font-weight: bold; border-none: true; border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 240, 255, 0.3);
-        }
-        
-        /* Conteneurs de métriques / Cartes */
-        div[data-testid="stMetricValue"] { color: #00F0FF !important; font-size: 2rem !important; font-weight: bold; }
-        div[data-testid="stMetricLabel"] { color: #9CA3AF !important; }
-        
-        /* Inputs et Sélecteurs */
-        div[data-baseweb="select"] { background-color: #1F2937 !important; }
-        </style>
-    """, unsafe_allow_html=True)
-else:
-    st.markdown("""
-        <style>
-        /* Fond global et textes */
-        .stApp { background-color: #F9FAFB; color: #111827; }
-        
-        /* Personnalisation des onglets (Tabs) */
-        button[data-baseweb="tab"] { color: #4B5563 !important; font-weight: 600; }
-        button[aria-selected="true"] { color: #2563EB !important; border-bottom-color: #2563EB !important; }
-        
-        /* Boutons Primaires (Boutons d'action) */
-        div.stButton > button[kind="primary"] { 
-            background-color: #2563EB !important; color: #FFFFFF !important; 
-            font-weight: bold; border-radius: 8px;
-        }
-        
-        /* Conteneurs de métriques / Cartes */
-        div[data-testid="stMetricValue"] { color: #2563EB !important; font-size: 2rem !important; font-weight: bold; }
-        div[data-testid="stMetricLabel"] { color: #4B5563 !important; }
-        </style>
-    """, unsafe_allow_html=True)
+# À METTRE À LA PLACE (Fige le Mode Jour)  
+st.markdown("""
+    <style>
+    /* Fond global et textes */
+    .stApp { background-color: #F9FAFB; color: #111827; }
+    
+    /* Personnalisation des onglets (Tabs) */
+    button[data-baseweb="tab"] { color: #4B5563 !important; font-weight: 600; }
+    button[aria-selected="true"] { color: #2563EB !important; border-bottom-color: #2563EB !important; }
+    
+    /* Boutons Primaires (Boutons d'action) */
+    div.stButton > button[kind="primary"], div.stButton > button[type="secondary"] { 
+        background-color: #2563EB !important; color: #FFFFFF !important; 
+        font-weight: bold; border-radius: 8px; border: none !important;
+    }
+    
+    /* Conteneurs de métriques / Cartes */
+    div[data-testid="stMetricValue"] { color: #2563EB !important; font-size: 2rem !important; font-weight: bold; }
+    div[data-testid="stMetricLabel"] { color: #4B5563 !important; }
+    </style>
+""", unsafe_allow_html=True)
 
 
 # --- FONCTIONS DE CALCUL AUTO-RÉGULÉES ---
