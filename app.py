@@ -18,14 +18,7 @@ if 'rm_autre' not in st.session_state: st.session_state.rm_autre = 100.0
 # --- BARRE LATÉRALE ---
 with st.sidebar:
     st.header("⚙️ Configuration")
-    
-    # Bouton de bascule de thème stylisé
-    label_theme = "☀️ Passer au Mode Jour" if st.session_state.theme_nuit else "🌙 Passer au Mode Nuit"
-    if st.button(label_theme, use_container_width=True):
-        st.session_state.theme_nuit = not st.session_state.theme_nuit
-        st.rerun()
-        
-    st.divider()
+
     st.subheader("🎯 Tes 1RM de Référence")
     st.session_state.rm_squat = st.number_input("Squat (kg)", min_value=1.0, value=st.session_state.rm_squat, step=2.5)
     st.session_state.rm_bench = st.number_input("Développé Couché (kg)", min_value=1.0, value=st.session_state.rm_bench, step=2.5)
